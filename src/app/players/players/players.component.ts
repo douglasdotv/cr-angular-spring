@@ -9,6 +9,7 @@ import { Player } from '../model/player';
 export class PlayersComponent implements OnInit {
 
     players: Player[];
+    displayedColumns = ['name', 'team'];
 
     constructor() {
       this.players = [];
