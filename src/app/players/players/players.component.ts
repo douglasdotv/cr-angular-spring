@@ -12,7 +12,10 @@ export class PlayersComponent implements OnInit {
     displayedColumns = ['name', 'team'];
 
     constructor() {
-      this.players = [];
+      this.players = [
+        { _id: '221684575', name: 'Thomas Thomas', team: 'Pajala Sunrise' },
+        { _id: '220070532', name: 'West Java', team: 'Penang' },
+      ];
     }
 
     ngOnInit(): void {
