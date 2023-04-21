@@ -1,18 +1,26 @@
-<table mat-table [dataSource]="players" class="mat-elevation-z8">
-<caption class="mat-table-caption">The players</caption>
+<mat-card>
 
-  <!-- Name -->
-  <ng-container matColumnDef="name">
-    <th mat-header-cell *matHeaderCellDef> Name </th>
-    <td mat-cell *matCellDef="let player"> {{player.name}} </td>
-  </ng-container>
+  <mat-toolbar color="primary">
+    <span>The Players</span>
+  </mat-toolbar>
 
-  <!-- Team -->
-  <ng-container matColumnDef="team">
-    <th mat-header-cell *matHeaderCellDef> Team </th>
-    <td mat-cell *matCellDef="let player"> {{player.team}} </td>
-  </ng-container>
+  <table mat-table [dataSource]="players" class="mat-elevation-z8">
+    <caption class="mat-table-caption">The players</caption>
 
-  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-</table>
+    <!-- Name -->
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef>Name</th>
+      <td mat-cell *matCellDef="let player">{{ player.name }}</td>
+    </ng-container>
+
+    <!-- Team -->
+    <ng-container matColumnDef="team">
+      <th mat-header-cell *matHeaderCellDef>Team</th>
+      <td mat-cell *matCellDef="let player">{{ player.team }}</td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+
+</mat-card>

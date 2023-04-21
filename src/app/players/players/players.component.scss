@@ -1,0 +1,11 @@
+table {
+  width: 100%;
+}
+
+.mat-table-caption {
+  display: none;
+}
+
+mat-card mat-toolbar:first-child {
+  margin-top: 16px;
+}
