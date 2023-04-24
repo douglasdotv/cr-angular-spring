@@ -1,25 +1,20 @@
 import { Component, OnInit } from '@angular/core';
+
 import { Player } from '../model/player';
+import { PlayersService } from './../services/players.service';
 
 @Component({
   selector: 'app-players',
   templateUrl: './players.component.html',
-  styleUrls: ['./players.component.scss']
+  styleUrls: ['./players.component.scss'],
 })
 export class PlayersComponent implements OnInit {
+  players: Player[];
+  displayedColumns = ['name', 'team'];
 
-    players: Player[];
-    displayedColumns = ['name', 'team'];
+  constructor(private playersService: PlayersService) {
+    this.players = this.playersService.getPlayers();
+  }
 
-    constructor() {
-      this.players = [
-        { _id: '221684575', name: 'Thomas Thomas', team: 'Pajala Sunrise' },
-        { _id: '220070532', name: 'West Java', team: 'Penang' },
-      ];
-    }
-
-    ngOnInit(): void {
-      // nothing to do
-    }
-
+  ngOnInit(): void {}
 }

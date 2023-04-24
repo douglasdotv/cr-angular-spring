@@ -1,25 +1,20 @@
 import { Component, OnInit } from '@angular/core';
+
 import { Team } from '../model/team';
+import { TeamsService } from './../services/teams.service';
 
 @Component({
   selector: 'app-teams',
   templateUrl: './teams.component.html',
-  styleUrls: ['./teams.component.scss']
+  styleUrls: ['./teams.component.scss'],
 })
 export class TeamsComponent implements OnInit {
+  teams: Team[];
+  displayedColumns = ['name', 'league'];
 
-    teams: Team[];
-    displayedColumns = ['name', 'league'];
+  constructor(private teamsService: TeamsService) {
+    this.teams = this.teamsService.getTeams();
+  }
 
-    constructor() {
-      this.teams = [
-        { _id: '36936', name: 'Pajala Sunrise', league: 'Sweden' },
-        { _id: '373367', name: 'Yelonki', league: 'Poland' },
-      ];
-    }
-
-    ngOnInit(): void {
-      // nothing to do
-    }
-
+  ngOnInit(): void {}
 }
