@@ -2,17 +2,19 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 import { Player } from '../model/player';
+import { tap, first } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root',
 })
 export class PlayersService {
+  private readonly API = '/assets/players.json';
+
   constructor(private httpClient: HttpClient) {}
 
-  getPlayers(): Player[] {
-    return [
-      { _id: '221684575', name: 'Thomas Thomas', team: 'Pajala Sunrise' },
-      { _id: '220070532', name: 'West Java', team: 'Penang' },
-    ];
+  getPlayers() {
+    return this.httpClient
+      .get<Player[]>(this.API)
+      .pipe(first(), tap((players) => console.log('players: ', players)));
   }
 }

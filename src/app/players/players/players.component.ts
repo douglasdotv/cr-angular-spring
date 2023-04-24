@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { Player } from '../model/player';
+import { Observable } from 'rxjs';
 import { PlayersService } from './../services/players.service';
 
 @Component({
@@ -9,10 +10,12 @@ import { PlayersService } from './../services/players.service';
   styleUrls: ['./players.component.scss'],
 })
 export class PlayersComponent implements OnInit {
-  players: Player[] = [];
+  players: Observable<Player[]> = new Observable<Player[]>();
   displayedColumns = ['name', 'team'];
 
-  constructor(private playersService: PlayersService) {}
+  constructor(private playersService: PlayersService) {
+
+  }
 
   ngOnInit(): void {
     this.players = this.playersService.getPlayers();
