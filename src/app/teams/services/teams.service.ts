@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 import { Team } from '../model/team';
@@ -6,7 +7,7 @@ import { Team } from '../model/team';
   providedIn: 'root',
 })
 export class TeamsService {
-  constructor() {}
+  constructor(private httpClient: HttpClient) {}
 
   getTeams(): Team[] {
     return [

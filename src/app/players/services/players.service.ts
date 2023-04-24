@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 import { Player } from '../model/player';
@@ -6,7 +7,7 @@ import { Player } from '../model/player';
   providedIn: 'root',
 })
 export class PlayersService {
-  constructor() {}
+  constructor(private httpClient: HttpClient) {}
 
   getPlayers(): Player[] {
     return [
