@@ -13,8 +13,10 @@ export class PlayersService {
   constructor(private httpClient: HttpClient) {}
 
   getPlayers() {
-    return this.httpClient
-      .get<Player[]>(this.API)
-      .pipe(first(), delay(2000), tap((players) => console.log('players: ', players)));
+    return this.httpClient.get<Player[]>(this.API).pipe(
+      first(),
+      delay(2000),
+      tap((players) => console.log('players: ', players)) // test
+    );
   }
 }

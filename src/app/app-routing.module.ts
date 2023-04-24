@@ -5,16 +5,18 @@ const routes: Routes = [
   { path: '', redirectTo: 'teams', pathMatch: 'full' },
   {
     path: 'players',
-    loadChildren: () => import('./players/players.module').then(m => m.PlayersModule)
+    loadChildren: () =>
+      import('./players/players.module').then((m) => m.PlayersModule),
   },
   {
     path: 'teams',
-    loadChildren: () => import('./teams/teams.module').then(m => m.TeamsModule)
-  }
+    loadChildren: () =>
+      import('./teams/teams.module').then((m) => m.TeamsModule),
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

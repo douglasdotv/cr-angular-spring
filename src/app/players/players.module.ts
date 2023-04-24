@@ -6,13 +6,7 @@ import { PlayersRoutingModule } from './players-routing.module';
 import { PlayersComponent } from './players/players.component';
 
 @NgModule({
-  declarations: [
-    PlayersComponent
-  ],
-  imports: [
-    CommonModule,
-    PlayersRoutingModule,
-    AppMaterialModule
-  ]
+  declarations: [PlayersComponent],
+  imports: [CommonModule, PlayersRoutingModule, AppMaterialModule],
 })
-export class PlayersModule { }
+export class PlayersModule {}

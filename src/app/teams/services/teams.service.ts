@@ -13,8 +13,10 @@ export class TeamsService {
   constructor(private httpClient: HttpClient) {}
 
   getTeams() {
-    return this.httpClient
-      .get<Team[]>(this.API)
-      .pipe(first(), delay(2000), tap((teams) => console.log('teams: ', teams)));
+    return this.httpClient.get<Team[]>(this.API).pipe(
+      first(),
+      delay(2000),
+      tap((teams) => console.log('teams: ', teams)) // test
+    );
   }
 }
