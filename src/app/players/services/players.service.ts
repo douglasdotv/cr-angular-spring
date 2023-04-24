@@ -1,8 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { delay, first, tap } from 'rxjs/operators';
 
 import { Player } from '../model/player';
-import { tap, first } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root',
@@ -15,6 +15,6 @@ export class PlayersService {
   getPlayers() {
     return this.httpClient
       .get<Player[]>(this.API)
-      .pipe(first(), tap((players) => console.log('players: ', players)));
+      .pipe(first(), delay(2000), tap((players) => console.log('players: ', players)));
   }
 }

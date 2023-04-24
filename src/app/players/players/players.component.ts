@@ -10,14 +10,12 @@ import { PlayersService } from './../services/players.service';
   styleUrls: ['./players.component.scss'],
 })
 export class PlayersComponent implements OnInit {
-  players: Observable<Player[]> = new Observable<Player[]>();
+  players$: Observable<Player[]> = new Observable<Player[]>();
   displayedColumns = ['name', 'team'];
 
-  constructor(private playersService: PlayersService) {
-
-  }
+  constructor(private playersService: PlayersService) {}
 
   ngOnInit(): void {
-    this.players = this.playersService.getPlayers();
+    this.players$ = this.playersService.getPlayers();
   }
 }
