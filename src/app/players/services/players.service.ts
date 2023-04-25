@@ -15,7 +15,7 @@ export class PlayersService {
   getPlayers() {
     return this.httpClient.get<Player[]>(this.API).pipe(
       first(),
-      delay(2000),
+      delay(1000),
       tap((players) => console.log('players: ', players)) // test
     );
   }

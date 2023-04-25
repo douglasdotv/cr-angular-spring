@@ -15,7 +15,7 @@ export class TeamsService {
   getTeams() {
     return this.httpClient.get<Team[]>(this.API).pipe(
       first(),
-      delay(2000),
+      delay(1000),
       tap((teams) => console.log('teams: ', teams)) // test
     );
   }
