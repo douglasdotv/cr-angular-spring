@@ -8,7 +8,7 @@ import { Team } from '../model/team';
   providedIn: 'root',
 })
 export class TeamsService {
-  private readonly API = '/assets/teams.json';
+  private readonly API = '/assets/teams_error.json';
 
   constructor(private httpClient: HttpClient) {}
 

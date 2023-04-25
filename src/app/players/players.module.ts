@@ -1,3 +1,4 @@
+import { SharedModule } from './../shared/shared.module';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 
@@ -7,6 +8,11 @@ import { PlayersComponent } from './players/players.component';
 
 @NgModule({
   declarations: [PlayersComponent],
-  imports: [CommonModule, PlayersRoutingModule, AppMaterialModule],
+  imports: [
+    CommonModule,
+    PlayersRoutingModule,
+    AppMaterialModule,
+    SharedModule,
+  ],
 })
 export class PlayersModule {}
