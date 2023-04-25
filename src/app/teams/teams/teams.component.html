@@ -18,7 +18,10 @@
       <!-- League -->
       <ng-container matColumnDef="league">
         <th mat-header-cell *matHeaderCellDef>League</th>
-        <td mat-cell *matCellDef="let team">{{ team.league }}</td>
+        <td mat-cell *matCellDef="let team">
+          {{ team.league }}
+          <mat-icon aria-hidden="false" aria-label="League icon">{{ team.league | app }}</mat-icon>
+        </td>
       </ng-container>
 
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
