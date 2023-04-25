@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { Team } from '../model/team';
 import { Observable, catchError, of } from 'rxjs';
 import { TeamsService } from './../services/teams.service';
-import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { MatDialog } from '@angular/material/dialog';
 import { ErrorDialogComponent } from '../../shared/components/error-dialog/error-dialog.component';
 
 @Component({
