@@ -8,7 +8,7 @@ import { Player } from '../model/player';
   providedIn: 'root',
 })
 export class PlayersService {
-  private readonly API = '/assets/players_error.json';
+  private readonly API = '/assets/players.json';
 
   constructor(private httpClient: HttpClient) {}
 
