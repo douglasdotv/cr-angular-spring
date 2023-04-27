@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { delay, first, tap } from 'rxjs/operators';
+import { first } from 'rxjs/operators';
 
 import { Team } from '../model/team';
 
@@ -8,15 +8,11 @@ import { Team } from '../model/team';
   providedIn: 'root',
 })
 export class TeamsService {
-  private readonly API = '/assets/teams.json';
+  private readonly API = '/api/teams';
 
   constructor(private httpClient: HttpClient) {}
 
   getTeams() {
-    return this.httpClient.get<Team[]>(this.API).pipe(
-      first(),
-      delay(1000),
-      tap((teams) => console.log('teams: ', teams)) // test
-    );
+    return this.httpClient.get<Team[]>(this.API).pipe(first());
   }
 }
